@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 59306,
+            "driver": "MySQL",
+            "name": "flower_db_mac_localhost",
+            "database": "flower_db",
+            "username": "user",
+            "password": "password"
+        }
+    ]
+}

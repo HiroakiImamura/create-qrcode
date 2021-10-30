@@ -1,0 +1,34 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>QRコード変換</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+	<script>function getValue(idname){
+	  // value値を取得する
+	  var result = document.getElementById(idname).value;
+      var utf8qrtext = unescape(encodeURIComponent(result));
+      $("#img-qr").html("");
+      $("#img-qr").qrcode({text:utf8qrtext}); 
+	  
+	}</script>
+	<style>
+		/* サムネイルの幅300px，大きい画像の幅900px */
+		.img300-900 input {display: none;}
+		.img300-900 input + img {width: 300px; cursor: pointer;}
+		.img300-900 input:checked + img {width: 900px;}
+	</style>
+</head>
+<body>
+	<div align='center'>
+		
+		QRコードに変換したい文字列を入れてください<br>
+		<input type="text" id="txt1">
+		<input type="button" value="QRコードに変換" onclick="getValue('txt1');">
+		<p class="img300-900">
+			<input type="checkbox" id="qr01">
+				<div id="img-qr"></div>
+		</p>
+	</div>
+</body>
+</html>
